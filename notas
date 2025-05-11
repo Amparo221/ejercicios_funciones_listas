@@ -1,0 +1,21 @@
+""""Anteriormente el codigo era:
+def eliminar_todos(lista, elemento):
+   i=0
+   while i < len(lista):
+        if lista[i] == elemento:
+            lista[:]= lista[:i]+lista[i+1:]
+        i+=1
+
+pero me di cuenta que si havia dos elementos a eliminar juntos, [10,9,3,3,4,5,6,3,7] en vez de [10,9,3,4,5,6,3,7], el resultado era [10,9,3,4,5,6,7], porque al cortar la lista y eliminar el 'index 2', la lista se convertia en [10,9,3,4,5,6,3,7], pero entonces el segundo 3 pasaba a estar en 'index 2', mientras que el while seguia a 'index 3' y lo ignoraba.
+
+Intente hacerlo con un for in range:
+
+def eliminar_todos(lista, elemento):
+    for i in range(len(lista)):
+        if lista[i] == elemento:
+            lista[:]= lista[:i]+lista[i+1:]
+
+pero me tiraba error, porque al analizar la lista, range(len(lista))=8, pero al aliminar parte de la lista, len cambiaba, y el for tiraba error, porque intentaba recorrer una lista de mayor tamano al existente.                
+
+
+"""
